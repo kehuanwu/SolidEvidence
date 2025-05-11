@@ -1,0 +1,297 @@
+@font-face {
+	font-family: 'bradford';
+	src: url('../font/BradfordMonoLL-Regular.otf');
+}
+
+@font-face {
+	font-family: 'jabin';
+	src: url('../font/Jabin-Typeface.ttf');
+}
+
+html {
+	cursor: url('../image/cursor.svg'), auto;
+}
+
+/* grid layout example */
+body {
+	background-color: rgb(28, 28, 28);
+	color: rgb(195, 195, 195);
+	font-family: 'bradford';
+	font-size: 10pt;
+	max-width: 100%;
+	position: relative;
+	margin: auto;
+	padding-bottom: 5rem;
+}
+
+.opener {
+	left: 2rem;
+	padding: 1rem;
+	margin-left: 2rem;
+	padding-top: 13rem;
+	font-family: jabin;
+	font-size: 100px;
+	font-weight: 20;
+	line-height: 6rem;
+}
+
+.star {
+	display: inline-block;
+	animation: opener-star 3s ease infinite reverse;
+	font-size: 50px;
+	transition: 1s;
+
+	&:hover {
+		filter: drop-shadow(0 0 0.3rem cyan);
+		color: cyan;
+	}
+}
+
+.glow-text {
+	transition: 1s;
+}
+
+.glow-text:hover {
+	filter: drop-shadow(0 0 2rem cyan);
+	color: cyan;
+}
+
+@keyframes opener-star {
+
+	/* happening at 0% of time / beginning : */
+	0% {
+		transform: rotate(0deg) scale(1);
+		/* in transform, no need to change lines */
+	}
+
+	/* happening at 50% of time: / end */
+	50% {
+		transform: rotate(360deg) scale(2.3);
+	}
+
+	/* happening at 100% of time: / end */
+	100% {
+		transform: rotate(360deg) scale(1);
+	}
+}
+
+.content {
+	margin: 0;
+	/* padding: 4rem; */
+	display: grid;
+	grid-template-columns: 340px 1fr;
+	/* 1fr = 1 fraction of the remaining width */
+	gap: 2rem;
+	/* gap between the columns */
+	align-items: start;
+	/* the border wraps immediately below the grid */
+}
+
+
+img {
+	width: 100%;
+	display: inline-block;
+	/* border: 1px solid black; */
+	/* padding: 1rem; */
+	/* box-sizing: border-box; */
+	transition: 1s;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+ol ol {
+	padding-left: 2rem;
+}
+
+
+/* 
+---------------------------------
+Navigation styles
+---------------------------------
+*/
+
+.navigation {
+	/* border: 0.1px solid; */
+	position: sticky;
+	top: 2rem;
+	left: 2rem;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.navigation ol {
+	list-style: none;
+}
+
+.navigation li {
+	border-bottom: 1px solid rgb(91, 91, 91);
+	/* border-width, border-style, border-color */
+}
+
+/* .navigation > ol > li:last-child {
+	border-bottom: none;
+} */
+
+.navigation__primary>li:last-child {
+	border-bottom: none;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+	padding: 0.5rem;
+	color: rgb(195, 195, 195);
+
+	transition: color 1s ease;
+
+	&:hover {
+		color: cyan;
+		/* filter: blur(3px); */
+	}
+}
+
+.navigation a:hover {
+	color: cyan;
+}
+
+/* navigation target example */
+:target:before {
+	content: "⟡";
+	/* can be unicode, including emoji */
+	display: inline-block;
+	animation: current-header 3s ease infinite reverse;
+	margin-right: 0.4rem;
+}
+
+@keyframes current-header {
+
+	/* happening at 0% of time / beginning : */
+	0% {
+		transform: rotate(0deg) scale(1);
+		/* in transform, no need to change lines */
+	}
+
+	/* happening at 50% of time: / end */
+	50% {
+		transform: rotate(360deg) scale(2.3);
+	}
+
+	/* happening at 100% of time: / end */
+	100% {
+		transform: rotate(360deg) scale(1);
+	}
+}
+
+/*  ---------------  */
+/*       directory    */
+/*  ---------------- */
+
+.directory {
+	margin-top: 2rem;
+}
+
+.subtitle {
+	margin-bottom: 4rem;
+	font-family: jabin;
+	font-weight: 20;
+	font-size: 30px;
+}
+
+.stone-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3rem;
+	/* Adjust the gap between stones */
+	min-width: 800px;
+	border-bottom: 1px solid rgb(91, 91, 91);
+}
+
+.stone {
+	flex: 1 0 calc(33.33% - 3rem);
+	/* Adjust the width of each stone (33.33% - gap) */
+	max-width: calc(33.33% - 3rem);
+	box-sizing: border-box;
+	margin-bottom: 30px;
+	min-width: 300px;
+}
+
+.stone img {
+	width: 80%;
+	margin: auto;
+	/* Center the image horizontally */
+	display: block;
+	margin-top: 50px auto;
+	margin-bottom: 30px;
+	/* Adjust the spacing between image and label */
+}
+
+.stone p {
+	text-align: center;
+}
+
+
+.label {
+	border-bottom: 1px solid rgb(91, 91, 91);
+	padding: 0.5rem;
+	transition: all 1s ease;
+	margin: 0;
+}
+
+img:hover {
+	filter: drop-shadow(0 0 1rem cyan);
+}
+
+
+/* adjusting stone image size */
+
+.galena img {
+	width: 60%;
+}
+
+.kyanite img {
+	width: 40%;
+}
+
+.labradorite img {
+	width: 60%;
+}
+
+.pyrite img {
+	width: 30%;
+}
+
+.opalite-1 img, .opalite-2 img {
+	width: 45%;
+}
+
+.silver-aura-quartz img {
+	width: 90%;
+}
+
+
+/* story behind the stones */
+
+.story {
+	margin-bottom: 2rem;
+	max-width: calc(50%);
+	transition: 1s;
+}
+
+#story-id {
+	margin-top: 5rem;;
+}
+
+.story-directory {
+	color: rgb(121, 121, 121);
+}
+
+.story:hover {
+	color: rgb(195, 195, 195);
+}
+
+#colophon-id {
+	margin-top: 5rem;
+}
