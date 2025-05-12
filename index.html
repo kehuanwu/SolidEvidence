@@ -12,7 +12,7 @@
 
 <body>
     <!-- Landing section with updated text -->
-    <div class="opener" id="introduction">
+    <section class="opener" id="introduction">
         <div class="landing-content">
             <p class="main-text"><span class="glow-text">A</span> <span class="glow-text">Catalogue</span> <span
                     class="glow-text">of</span> <span class="glow-text">Solid</span> <span
@@ -29,14 +29,14 @@
             </p>
             <div class="bottom-elements">
                 <p class="scroll-hint">Scroll down to explore the collection</p>
-                <div class="scroll-arrow" id="scroll-arrow">
+                <div class="scroll-arrow glow-element" id="scroll-arrow">
                     <svg width="50" height="30" viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 5 L25 25 L45 5" stroke="rgb(195, 195, 195)" stroke-width="1.5" />
                     </svg>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Parallax section container -->
     <div class="parallax-container">
@@ -51,7 +51,7 @@
         </nav>
 
         <!-- First horizontal strip - stone images -->
-        <div class="horizontal-strip stones-strip" id="stones-strip">
+        <section class="horizontal-strip stones-strip" id="stones-strip">
             <div class="strip-content">
                 <!-- Stones ordered from small to large -->
                 <div class="stone-item" data-stone="pyrite">
@@ -94,10 +94,10 @@
                     <img src="image/amethyst.png" alt="amethyst" class="stone-img">
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Second horizontal strip - stone information -->
-        <div class="horizontal-strip info-strip">
+        <section class="horizontal-strip info-strip" id="info-strip">
             <div class="strip-content">
                 <!-- Stone information cards -->
                 <div class="info-card" id="pyrite-info">
@@ -239,7 +239,7 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Stories section -->
         <div class="stories-section" id="story-id">
@@ -554,8 +554,8 @@
                             return;
                         }
                         
-                        element.scrollLeft -= velocity * 25; // 16ms is approx. one frame
-                        velocity *= 5; // Friction factor
+                        element.scrollLeft -= velocity * 16; // 16ms is approx. one frame
+                        velocity *= 0.95; // Friction factor
                     }, 16);
                 }
             }

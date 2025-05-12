@@ -159,7 +159,6 @@ body {
 
 /* Horizontal strips styling */
 .horizontal-strip {
-    height: 45vh; /* Adjusted to ensure both strips fit vertically */
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -176,6 +175,7 @@ body {
 }
 
 .stones-strip {
+	height: 50vh; /* Adjusted to ensure both strips fit vertically */
     padding: 5rem 0; /* Increased padding to prevent glow cutoff */
     display: flex;
     align-items: center; /* Vertically center stones */
@@ -192,14 +192,14 @@ body {
 .stone-item {
     display: inline-block;
     text-align: center;
-    margin: 0 1.8rem; /* Increased spacing by 20% from previous 1.5rem */
+    margin: 0 4rem; 
     cursor: pointer;
     transform-origin: center center; /* Ensure transform happens from center */
 }
 
 .stone-img {
     height: 80vh; /* Base height, will be adjusted per stone */
-    max-width: 450px;
+    max-width: 600px;
     object-fit: contain;
     transition: transform 2s ease, filter 2s ease; /* Slowed down transitions */
     transform-origin: center center;
@@ -212,20 +212,21 @@ body {
 
 /* Adjust various stone sizes to create progression but make them 30% larger */
 [data-stone="pyrite"] .stone-img {
-    height: 32.5vh;
+    height: 20vh;
 }
 
 [data-stone="silver-aura-quartz"] .stone-img {
-    height: 39vh;
+    /* height: 70vh; */
+	width: 50vw;
 }
 
 [data-stone="opalite-1"] .stone-img, 
 [data-stone="opalite-2"] .stone-img {
-    height: 45.5vh;
+    height: 25vh;
 }
 
 [data-stone="kyanite"] .stone-img {
-    height: 52vh;
+    height: 20vh;
 }
 
 [data-stone="pyrite-cube"] .stone-img {
@@ -233,23 +234,23 @@ body {
 }
 
 [data-stone="galena"] .stone-img {
-    height: 57.2vh;
+    height: 40vh;
 }
 
 [data-stone="bornite"] .stone-img {
-    height: 59.8vh;
+    height: 51vh;
 }
 
 [data-stone="shungite"] .stone-img {
-    height: 62.4vh;
+    height: 70vh;
 }
 
 [data-stone="labradorite"] .stone-img {
-    height: 65vh;
+    height: 70vh;
 }
 
 [data-stone="petrified-wood"] .stone-img {
-    height: 67.6vh;
+    height: 45vh;
 }
 
 [data-stone="prasiolite"] .stone-img {
@@ -263,15 +264,16 @@ body {
 /* Info cards styling - left aligned now */
 .info-strip {
     background-color: #000000;
+	height: 30vh; /* Adjusted to ensure both strips fit vertically */
 }
 
 .info-card {
     display: inline-block;
-    width: 420px; /* 300px + 40% */
+    width: 500px; 
     height: auto;
     vertical-align: top;
     padding: 1rem;
-    margin: 0 0.6rem; /* Reduced spacing */
+    margin: 0 0.07rem; /* Reduced spacing */
     white-space: normal;
     text-align: left; /* Left aligned */
 }
