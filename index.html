@@ -40,25 +40,27 @@
 
     <!-- Parallax section container -->
     <div class="parallax-container">
-        <!-- Navigation menu -->
+                    <!-- Navigation menu -->
         <nav class="navigation">
             <ol class="navigation__primary">
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#stones-strip">Stone Collection</a></li>
+                <!--
                 <li><a href="#story-id">Stories Behind the Stones</a></li>
                 <li><a href="#colophon-id">Colophon</a></li>
+                -->
             </ol>
         </nav>
 
-        <!-- First horizontal strip - stone images -->
-        <section class="horizontal-strip stones-strip" id="stones-strip">
+        <!-- First horizontal strip - stone images, rearranged by size -->
+        <section class="horizontal-strip stones-strip auto-scroll" id="stones-strip">
             <div class="strip-content">
-                <!-- Stones ordered from small to large -->
+                <!-- Stones ordered from smallest to largest -->
                 <div class="stone-item" data-stone="pyrite">
                     <img src="image/pyrite.png" alt="pyrite" class="stone-img">
                 </div>
-                <div class="stone-item" data-stone="silver-aura-quartz">
-                    <img src="image/silver-aura-quartz.png" alt="silver-aura-quartz" class="stone-img">
+                <div class="stone-item" data-stone="kyanite">
+                    <img src="image/kyanite.png" alt="kyanite" class="stone-img">
                 </div>
                 <div class="stone-item" data-stone="opalite-1">
                     <img src="image/opalite-1.png" alt="opalite-1" class="stone-img">
@@ -66,26 +68,26 @@
                 <div class="stone-item" data-stone="opalite-2">
                     <img src="image/opalite-2.png" alt="opalite-2" class="stone-img">
                 </div>
-                <div class="stone-item" data-stone="kyanite">
-                    <img src="image/kyanite.png" alt="kyanite" class="stone-img">
-                </div>
-                <div class="stone-item" data-stone="pyrite-cube">
-                    <img src="image/pyrite-cube.png" alt="pyrite-cube" class="stone-img">
-                </div>
                 <div class="stone-item" data-stone="galena">
                     <img src="image/galena.png" alt="galena" class="stone-img">
                 </div>
+                <div class="stone-item" data-stone="petrified-wood">
+                    <img src="image/petrified-wood.png" alt="petrified-wood" class="stone-img">
+                </div>
+                <div class="stone-item" data-stone="silver-aura-quartz">
+                    <img src="image/silver-aura-quartz.png" alt="silver-aura-quartz" class="stone-img">
+                </div>
                 <div class="stone-item" data-stone="bornite">
                     <img src="image/bornite.png" alt="bornite" class="stone-img">
+                </div>
+                <div class="stone-item" data-stone="pyrite-cube">
+                    <img src="image/pyrite-cube.png" alt="pyrite-cube" class="stone-img">
                 </div>
                 <div class="stone-item" data-stone="shungite">
                     <img src="image/shungite.png" alt="shungite" class="stone-img">
                 </div>
                 <div class="stone-item" data-stone="labradorite">
                     <img src="image/labradorite.png" alt="labradorite" class="stone-img">
-                </div>
-                <div class="stone-item" data-stone="petrified-wood">
-                    <img src="image/petrified-wood.png" alt="petrified-wood" class="stone-img">
                 </div>
                 <div class="stone-item" data-stone="prasiolite">
                     <img src="image/prasiolite.png" alt="prasiolite" class="stone-img">
@@ -96,10 +98,10 @@
             </div>
         </section>
 
-        <!-- Second horizontal strip - stone information -->
+        <!-- Second horizontal strip - stone information, rearranged to match stone order -->
         <section class="horizontal-strip info-strip" id="info-strip">
             <div class="strip-content">
-                <!-- Stone information cards -->
+                <!-- Stone information cards rearranged to match stone order -->
                 <div class="info-card" id="pyrite-info">
                     <p class="label label-title">PYRITE</p>
                     <p class="label label-time">Aug 16, 2023</p>
@@ -111,14 +113,15 @@
                         properties in spiritual practices.
                     </p>
                 </div>
-                <div class="info-card" id="silver-aura-quartz-info">
-                    <p class="label label-title">SILVER AURA QUARTZ</p>
-                    <p class="label label-time">Aug 16, 2023</p>
-                    <p class="label label-location">Salem, MA</p>
+                <div class="info-card" id="kyanite-info">
+                    <p class="label label-title">KYANITE</p>
+                    <p class="label label-time">June 11, 2022</p>
+                    <p class="label label-location">New York City</p>
                     <p class="label label-info">
-                        Silver aura quartz, a stunning crystal infused with precious metals, exhibits a captivating
-                        iridescence reminiscent of moonlight on water. Known for enhancing intuition and spiritual
-                        connection, it's prized for its harmonizing energy and ability to uplift the spirit.
+                        Kyanite, a blue silicate mineral, is renowned for its remarkable anisotropic properties,
+                        displaying different colors when viewed from different angles. Resonating with the throat
+                        chakra, Kyanite is believed to promote communication, self-expression, and alignment of
+                        one's energy centers.
                     </p>
                 </div>
                 <div class="info-card" id="opalite-1-info">
@@ -141,28 +144,6 @@
                         calming energy and is believed to promote serenity, emotional balance, and spiritual growth.
                     </p>
                 </div>
-                <div class="info-card" id="kyanite-info">
-                    <p class="label label-title">KYANITE</p>
-                    <p class="label label-time">June 11, 2022</p>
-                    <p class="label label-location">New York City</p>
-                    <p class="label label-info">
-                        Kyanite, a blue silicate mineral, is renowned for its remarkable anisotropic properties,
-                        displaying different colors when viewed from different angles. Resonating with the throat
-                        chakra, Kyanite is believed to promote communication, self-expression, and alignment of
-                        one's energy centers.
-                    </p>
-                </div>
-                <div class="info-card" id="pyrite-cube-info">
-                    <p class="label label-title">PYRITE CUBE</p>
-                    <p class="label label-time">Feb 11, 2024</p>
-                    <p class="label label-location">Chicago, IL</p>
-                    <p class="label label-info">
-                        Pyrite cube, a unique form of pyrite mineral, exhibits a distinct cubic structure with
-                        metallic luster, often resembling small golden cubes. Known as "fool's gold," it holds
-                        fascination for its resemblance to real gold and is valued in crystal healing for its
-                        ability to enhance willpower and manifestation.
-                    </p>
-                </div>
                 <div class="info-card" id="galena-info">
                     <p class="label label-title">GALENA</p>
                     <p class="label label-time">May 15, 2022</p>
@@ -174,6 +155,26 @@
                         connection to the earth element.
                     </p>
                 </div>
+                <div class="info-card" id="petrified-wood-info">
+                    <p class="label label-title">PETRIFIED WOOD</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Petrified wood is fossilized wood transformed into stone through mineral replacement,
+                        showcasing vivid colors and preserved wood grain. Appreciated for its unique appearance and
+                        grounding properties, it holds a connection to both geological history and spiritual realms.
+                    </p>
+                </div>
+                <div class="info-card" id="silver-aura-quartz-info">
+                    <p class="label label-title">SILVER AURA QUARTZ</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Silver aura quartz, a stunning crystal infused with precious metals, exhibits a captivating
+                        iridescence reminiscent of moonlight on water. Known for enhancing intuition and spiritual
+                        connection, it's prized for its harmonizing energy and ability to uplift the spirit.
+                    </p>
+                </div>
                 <div class="info-card" id="bornite-info">
                     <p class="label label-title">BORNITE</p>
                     <p class="label label-time">Mar 19, 2023</p>
@@ -183,6 +184,17 @@
                         iridescent surface with vibrant hues ranging from blue to purple. This copper sulfide
                         mineral is prized by collectors for its striking appearance and is often used in jewelry and
                         decorative pieces.
+                    </p>
+                </div>
+                <div class="info-card" id="pyrite-cube-info">
+                    <p class="label label-title">PYRITE CUBE</p>
+                    <p class="label label-time">Feb 11, 2024</p>
+                    <p class="label label-location">Chicago, IL</p>
+                    <p class="label label-info">
+                        Pyrite cube, a unique form of pyrite mineral, exhibits a distinct cubic structure with
+                        metallic luster, often resembling small golden cubes. Known as "fool's gold," it holds
+                        fascination for its resemblance to real gold and is valued in crystal healing for its
+                        ability to enhance willpower and manifestation.
                     </p>
                 </div>
                 <div class="info-card" id="shungite-info">
@@ -205,16 +217,6 @@
                         flashes of blue, green, and gold hues. This feldspar mineral is cherished for its mystical
                         properties, believed to enhance intuition, protect against negative energies, and promote
                         spiritual awakening.
-                    </p>
-                </div>
-                <div class="info-card" id="petrified-wood-info">
-                    <p class="label label-title">PETRIFIED WOOD</p>
-                    <p class="label label-time">Aug 16, 2023</p>
-                    <p class="label label-location">Salem, MA</p>
-                    <p class="label label-info">
-                        Petrified wood is fossilized wood transformed into stone through mineral replacement,
-                        showcasing vivid colors and preserved wood grain. Appreciated for its unique appearance and
-                        grounding properties, it holds a connection to both geological history and spiritual realms.
                     </p>
                 </div>
                 <div class="info-card" id="prasiolite-info">
@@ -242,6 +244,7 @@
         </section>
 
         <!-- Stories section -->
+        <!--
         <div class="stories-section" id="story-id">
             <p class="subtitle">Stories Behind the Stones</p>
             <div class="story-container">
@@ -286,7 +289,6 @@
                         coincidence!</p>
                 </div>
 
-                <!-- Other stories remain the same -->
                 <div class="story" id="06112022">
                     <p>June 11, 2022</p>
                     <p>Bought on the weekend of Juneteenth in the Juneteenth open market in Washington Square Park.
@@ -365,10 +367,14 @@
                 <p>Typeset in Bradford Mono from Lineto designed by Laurenz Brunner, and Jabin designed by fridamedrano.</p>
             </div>
         </div>
+        -->
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Ensure we start at the opener section
+            window.scrollTo(0, 0);
+            
             // Scroll arrow functionality
             const scrollArrow = document.getElementById('scroll-arrow');
             const stonesSection = document.getElementById('stones-strip');
@@ -380,115 +386,200 @@
                 });
             });
             
-            // Drag functionality for the stone strip
-            enableDragging(document.querySelector('.stones-strip'));
+            // Reference to strips
+            const stonesStrip = document.querySelector('.stones-strip');
+            const infoStrip = document.querySelector('.info-strip');
             
-            // Drag functionality for the info strip
-            enableDragging(document.querySelector('.info-strip'));
+            // Animation variables
+            let stonesDirection = 1; // 1 for right, -1 for left
+            let infoDirection = -1; // Start info strip in opposite direction
+            let stonesVelocity = 0.5;
+            let infoVelocity = 0.3; // Different speed for info strip
+            let stonesScrollInterval;
+            let infoScrollInterval;
+            let isInteracting = false;
+            const bounceAmount = 0.3; // Controls the bounce effect
+            
+            // Function to animate stones strip
+            function animateStonesStrip() {
+                clearInterval(stonesScrollInterval);
+                
+                stonesScrollInterval = setInterval(function() {
+                    // Always animate, even during hover
+                    stonesStrip.scrollLeft += stonesDirection * stonesVelocity;
+                    
+                    // Check boundaries and add bounce effect
+                    if (stonesStrip.scrollLeft <= 0) {
+                        // Left bounce
+                        stonesStrip.scrollLeft = 0;
+                        stonesDirection = 1;
+                        stonesVelocity = 0.5; // Reset velocity
+                    } else if (stonesStrip.scrollLeft >= (stonesStrip.scrollWidth - stonesStrip.clientWidth)) {
+                        // Right bounce
+                        stonesStrip.scrollLeft = stonesStrip.scrollWidth - stonesStrip.clientWidth;
+                        stonesDirection = -1;
+                        stonesVelocity = 0.5; // Reset velocity
+                    }
+                }, 16); // 60fps for smooth animation
+            }
+            
+            // Function to animate info strip independently
+            function animateInfoStrip() {
+                clearInterval(infoScrollInterval);
+                
+                infoScrollInterval = setInterval(function() {
+                    // Always animate, even during hover
+                    infoStrip.scrollLeft += infoDirection * infoVelocity;
+                    
+                    // Check boundaries and add bounce effect
+                    if (infoStrip.scrollLeft <= 0) {
+                        // Left bounce
+                        infoStrip.scrollLeft = 0;
+                        infoDirection = 1;
+                        infoVelocity = 0.3; // Reset velocity
+                    } else if (infoStrip.scrollLeft >= (infoStrip.scrollWidth - infoStrip.clientWidth)) {
+                        // Right bounce
+                        infoStrip.scrollLeft = infoStrip.scrollWidth - infoStrip.clientWidth;
+                        infoDirection = -1;
+                        infoVelocity = 0.3; // Reset velocity
+                    }
+                }, 16); // 60fps for smooth animation
+            }
+            
+            // Start both animations
+            animateStonesStrip();
+            animateInfoStrip();
             
             // Click event for each stone
             const stoneItems = document.querySelectorAll('.stone-item');
+            const infoCards = document.querySelectorAll('.info-card');
             
+            // Function to center stone and info card
+            function centerStoneAndInfo(stoneName) {
+                isInteracting = true;
+                
+                const stoneItem = document.querySelector(`[data-stone="${stoneName}"]`);
+                const infoCard = document.getElementById(`${stoneName}-info`);
+                
+                if (!stoneItem || !infoCard) return;
+                
+                // Stop animations temporarily
+                clearInterval(stonesScrollInterval);
+                clearInterval(infoScrollInterval);
+                
+                // Calculate positions
+                const stoneRect = stoneItem.getBoundingClientRect();
+                const stoneCenter = stoneRect.left + stoneRect.width/2;
+                const viewportCenter = window.innerWidth/2;
+                const stoneOffset = stoneCenter - viewportCenter;
+                
+                // Center the stone
+                stonesStrip.scrollBy({
+                    left: stoneOffset,
+                    behavior: 'smooth'
+                });
+                
+                // Center the info card
+                const infoRect = infoCard.getBoundingClientRect();
+                const infoCenter = infoRect.left + infoRect.width/2;
+                const infoOffset = infoCenter - viewportCenter;
+                
+                infoStrip.scrollBy({
+                    left: infoOffset,
+                    behavior: 'smooth'
+                });
+                
+                // Resume animations after centering completes
+                setTimeout(function() {
+                    isInteracting = false;
+                    animateStonesStrip();
+                    animateInfoStrip();
+                }, 1000);
+            }
+            
+            // Add click event to each stone
             stoneItems.forEach(item => {
                 item.addEventListener('click', function() {
                     const stoneName = this.getAttribute('data-stone');
-                    const infoCard = document.getElementById(`${stoneName}-info`);
-                    
-                    // Get both elements
-                    const stoneSection = document.querySelector('.stones-strip');
-                    const infoSection = document.querySelector('.info-strip');
-                    
-                    // Calculate positions
-                    const stoneRect = this.getBoundingClientRect();
-                    const stoneCenter = stoneRect.left + stoneRect.width/2;
-                    const viewportCenter = window.innerWidth/2;
-                    const stoneOffset = stoneCenter - viewportCenter;
-                    
-                    // Calculate if this is the first or last stone
-                    const isFirst = this === stoneItems[0];
-                    const isLast = this === stoneItems[stoneItems.length - 1];
-                    
-                    if (isFirst) {
-                        // If it's the first stone, align it to the left edge with some padding
-                        stoneSection.scrollTo({
-                            left: 0,
-                            behavior: 'smooth'
-                        });
-                        
-                        if (infoCard) {
-                            infoSection.scrollTo({
-                                left: 0,
-                                behavior: 'smooth'
-                            });
-                        }
-                    } else if (isLast) {
-                        // If it's the last stone, align it to the right edge with some padding
-                        stoneSection.scrollTo({
-                            left: stoneSection.scrollWidth,
-                            behavior: 'smooth'
-                        });
-                        
-                        if (infoCard) {
-                            infoSection.scrollTo({
-                                left: infoSection.scrollWidth,
-                                behavior: 'smooth'
-                            });
-                        }
-                    } else {
-                        // For all other stones, center them
-                        stoneSection.scrollBy({
-                            left: stoneOffset,
-                            behavior: 'smooth'
-                        });
-                        
-                        if (infoCard) {
-                            const infoRect = infoCard.getBoundingClientRect();
-                            const infoCenter = infoRect.left + infoRect.width/2;
-                            const infoOffset = infoCenter - viewportCenter;
-                            
-                            infoSection.scrollBy({
-                                left: infoOffset,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
+                    centerStoneAndInfo(stoneName);
                 });
             });
+            
+            // Add click event to each info card
+            infoCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Extract stone name from info card ID
+                    const stoneName = this.id.replace('-info', '');
+                    centerStoneAndInfo(stoneName);
+                });
+            });
+            
+            // Enable dragging for strips
+            enableDragging(stonesStrip);
+            enableDragging(infoStrip);
             
             // Function to enable dragging
             function enableDragging(element) {
                 let isDown = false;
                 let startX;
                 let scrollLeft;
-                let momentumID;
-                let velocity = 0;
-                let lastX = 0;
-                let timestamp = 0;
                 
                 element.addEventListener('mousedown', (e) => {
                     isDown = true;
+                    isInteracting = true;
                     element.classList.add('active');
                     startX = e.pageX - element.offsetLeft;
                     scrollLeft = element.scrollLeft;
-                    lastX = e.pageX;
-                    timestamp = Date.now();
-                    clearInterval(momentumID);
+                    
+                    // Stop animations while dragging
+                    clearInterval(stonesScrollInterval);
+                    clearInterval(infoScrollInterval);
                 });
                 
                 element.addEventListener('mouseleave', () => {
                     if (isDown) {
-                        startMomentumScroll();
+                        isDown = false;
+                        element.classList.remove('active');
+                        
+                        // If we're at the edges, set the proper direction for bounce
+                        if (element === stonesStrip) {
+                            if (element.scrollLeft <= 0) stonesDirection = 1;
+                            else if (element.scrollLeft >= (element.scrollWidth - element.clientWidth)) stonesDirection = -1;
+                        } else if (element === infoStrip) {
+                            if (element.scrollLeft <= 0) infoDirection = 1;
+                            else if (element.scrollLeft >= (element.scrollWidth - element.clientWidth)) infoDirection = -1;
+                        }
+                        
+                        // Resume animations
+                        setTimeout(() => {
+                            isInteracting = false;
+                            animateStonesStrip();
+                            animateInfoStrip();
+                        }, 500);
                     }
-                    isDown = false;
-                    element.classList.remove('active');
                 });
                 
                 element.addEventListener('mouseup', () => {
                     if (isDown) {
-                        startMomentumScroll();
+                        isDown = false;
+                        element.classList.remove('active');
+                        
+                        // If we're at the edges, set the proper direction for bounce
+                        if (element === stonesStrip) {
+                            if (element.scrollLeft <= 0) stonesDirection = 1;
+                            else if (element.scrollLeft >= (element.scrollWidth - element.clientWidth)) stonesDirection = -1;
+                        } else if (element === infoStrip) {
+                            if (element.scrollLeft <= 0) infoDirection = 1;
+                            else if (element.scrollLeft >= (element.scrollWidth - element.clientWidth)) infoDirection = -1;
+                        }
+                        
+                        // Resume animations
+                        setTimeout(() => {
+                            isInteracting = false;
+                            animateStonesStrip();
+                            animateInfoStrip();
+                        }, 500);
                     }
-                    isDown = false;
-                    element.classList.remove('active');
                 });
                 
                 element.addEventListener('mousemove', (e) => {
@@ -497,35 +588,42 @@
                     const x = e.pageX - element.offsetLeft;
                     const walk = (x - startX) * 2;
                     element.scrollLeft = scrollLeft - walk;
-                    
-                    // Calculate velocity for momentum
-                    const now = Date.now();
-                    const dt = now - timestamp;
-                    if (dt > 0) {
-                        const dx = e.pageX - lastX;
-                        velocity = dx / dt;
-                    }
-                    lastX = e.pageX;
-                    timestamp = now;
                 });
                 
                 // Touch events for mobile
                 element.addEventListener('touchstart', (e) => {
                     isDown = true;
+                    isInteracting = true;
                     element.classList.add('active');
                     startX = e.touches[0].pageX - element.offsetLeft;
                     scrollLeft = element.scrollLeft;
-                    lastX = e.touches[0].pageX;
-                    timestamp = Date.now();
-                    clearInterval(momentumID);
+                    
+                    // Stop animations while dragging
+                    clearInterval(stonesScrollInterval);
+                    clearInterval(infoScrollInterval);
                 }, { passive: true });
                 
                 element.addEventListener('touchend', () => {
                     if (isDown) {
-                        startMomentumScroll();
+                        isDown = false;
+                        element.classList.remove('active');
+                        
+                        // If we're at the edges, set the proper direction for bounce
+                        if (element === stonesStrip) {
+                            if (element.scrollLeft <= 0) stonesDirection = 1;
+                            else if (element.scrollLeft >= (element.scrollWidth - element.clientWidth)) stonesDirection = -1;
+                        } else if (element === infoStrip) {
+                            if (element.scrollLeft <= 0) infoDirection = 1;
+                            else if (element.scrollLeft >= (element.scrollWidth - element.clientWidth)) infoDirection = -1;
+                        }
+                        
+                        // Resume animations
+                        setTimeout(() => {
+                            isInteracting = false;
+                            animateStonesStrip();
+                            animateInfoStrip();
+                        }, 500);
                     }
-                    isDown = false;
-                    element.classList.remove('active');
                 });
                 
                 element.addEventListener('touchmove', (e) => {
@@ -533,35 +631,11 @@
                     const x = e.touches[0].pageX - element.offsetLeft;
                     const walk = (x - startX) * 2;
                     element.scrollLeft = scrollLeft - walk;
-                    
-                    // Calculate velocity for momentum
-                    const now = Date.now();
-                    const dt = now - timestamp;
-                    if (dt > 0) {
-                        const dx = e.touches[0].pageX - lastX;
-                        velocity = dx / dt;
-                    }
-                    lastX = e.touches[0].pageX;
-                    timestamp = now;
                 }, { passive: true });
-                
-                function startMomentumScroll() {
-                    clearInterval(momentumID);
-                    
-                    momentumID = setInterval(() => {
-                        if (Math.abs(velocity) < 0.1) {
-                            clearInterval(momentumID);
-                            return;
-                        }
-                        
-                        element.scrollLeft -= velocity * 16; // 16ms is approx. one frame
-                        velocity *= 0.95; // Friction factor
-                    }, 16);
-                }
             }
             
             // Add scroll snap behavior
-            const sections = document.querySelectorAll('section, .opener, .horizontal-strip, .stories-section, .colophon-container');
+            const sections = document.querySelectorAll('section, .opener, .horizontal-strip');
             let isScrolling = false;
             let currentSection = 0;
             

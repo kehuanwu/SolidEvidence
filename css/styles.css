@@ -37,6 +37,18 @@ body {
     display: none;
 }
 
+/* Disable text selection for stones and cards */
+.stone-item,
+.stone-img,
+.info-card,
+.label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: auto; /* Ensure click events still work */
+}
+
 /* Landing section styling */
 .opener {
     height: 100vh;
@@ -46,6 +58,7 @@ body {
     background-color: #000000;
     scroll-snap-align: start;
     overflow: hidden;
+    z-index: 10; /* Ensure opener is above other sections */
 }
 
 .landing-content {
@@ -88,6 +101,24 @@ body {
     transform: translateX(-50%);
     cursor: pointer;
     animation: fade 2s infinite alternate;
+    transition: 1s;
+}
+
+.scroll-arrow:hover {
+    filter: drop-shadow(0 0 2rem cyan);
+}
+
+.scroll-arrow svg path {
+    transition: 1s;
+}
+
+.scroll-arrow:hover svg path {
+    stroke: cyan;
+}
+
+.glow-element:hover {
+    filter: drop-shadow(0 0 2rem cyan);
+    color: cyan;
 }
 
 @keyframes fade {
@@ -174,9 +205,14 @@ body {
     cursor: -webkit-grabbing;
 }
 
+/* Auto-scrolling animation styling */
+.auto-scroll {
+    will-change: scroll-position;
+}
+
 .stones-strip {
-	height: 50vh; /* Adjusted to ensure both strips fit vertically */
-    padding: 5rem 0; /* Increased padding to prevent glow cutoff */
+    height: 42vh; /* Adjusted to ensure both strips fit vertically */
+    padding: 8rem 0; /* Increased padding to prevent glow cutoff */
     display: flex;
     align-items: center; /* Vertically center stones */
 }
@@ -198,7 +234,7 @@ body {
 }
 
 .stone-img {
-    height: 80vh; /* Base height, will be adjusted per stone */
+    height: auto; /* Let the specific heights control sizing */
     max-width: 600px;
     object-fit: contain;
     transition: transform 2s ease, filter 2s ease; /* Slowed down transitions */
@@ -215,9 +251,8 @@ body {
     height: 20vh;
 }
 
-[data-stone="silver-aura-quartz"] .stone-img {
-    /* height: 70vh; */
-	width: 50vw;
+[data-stone="kyanite"] .stone-img {
+    height: 20vh;
 }
 
 [data-stone="opalite-1"] .stone-img, 
@@ -225,51 +260,48 @@ body {
     height: 25vh;
 }
 
-[data-stone="kyanite"] .stone-img {
-    height: 20vh;
-}
-
-[data-stone="pyrite-cube"] .stone-img {
-    height: 54.6vh;
-}
-
 [data-stone="galena"] .stone-img {
     height: 40vh;
-}
-
-[data-stone="bornite"] .stone-img {
-    height: 51vh;
-}
-
-[data-stone="shungite"] .stone-img {
-    height: 70vh;
-}
-
-[data-stone="labradorite"] .stone-img {
-    height: 70vh;
 }
 
 [data-stone="petrified-wood"] .stone-img {
     height: 45vh;
 }
 
+[data-stone="silver-aura-quartz"] .stone-img {
+    width: 50vw;
+}
+
+[data-stone="bornite"] .stone-img {
+    height: 51vh;
+}
+
+[data-stone="pyrite-cube"] .stone-img {
+    height: 54.6vh;
+}
+
+[data-stone="shungite"] .stone-img,
+[data-stone="labradorite"] .stone-img {
+    height: 65vh; /* Slightly reduced to ensure glow fits */
+}
+
 [data-stone="prasiolite"] .stone-img {
-    height: 70.2vh;
+    height: 67vh;
 }
 
 [data-stone="amethyst"] .stone-img {
-    height: 72.8vh;
+    height: 68vh;
 }
 
 /* Info cards styling - left aligned now */
 .info-strip {
     background-color: #000000;
-	height: 30vh; /* Adjusted to ensure both strips fit vertically */
+    height: 30vh; /* Adjusted to ensure both strips fit vertically */
 }
 
 .info-card {
     display: inline-block;
-    width: 500px; 
+    width: 700px; 
     height: auto;
     vertical-align: top;
     padding: 1rem;
