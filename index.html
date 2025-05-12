@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="font/BradfordMonoLL-Regular.otf" />
     <link rel="stylesheet" href="font/Jabin-Typeface.ttf" />
-
 </head>
 
 <body>
+    <!-- Landing section - kept similar to original -->
     <div class="opener" id="introduction">
         <p class="star">⟡</p>
         <p><span class="glow-text">Documenting</span> <span class="glow-text">my</span> <span
@@ -21,361 +21,382 @@
             <span class="glow-text">acquired,</span> <span class="glow-text">and</span> <span
                 class="glow-text">metaphysical</span> <span class="glow-text">meaning.</span>
         </p>
-
+        <p class="scroll-hint">Scroll down to explore the collection</p>
     </div>
-    <div class="content">
-        <!-- Navigation block -->
+
+    <!-- Parallax section container -->
+    <div class="parallax-container">
+        <!-- Navigation menu -->
         <nav class="navigation">
             <ol class="navigation__primary">
                 <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#directory-id">Directory of Stone and Crystals</a></li>
-                <ol class="navigation__secondary">
-                    <li><a href="#amethyst-id">Amethyst</a></li>
-                    <li><a href="#bornite-id">Bornite</a></li>
-                    <li><a href="#galena-id">Galena</a></li>
-                    <li><a href="#kyanite-id">Kyanite</a></li>
-                    <li><a href="#labradorite-id">Labradorite</a></li>
-                    <li><a href="#opalite-1-id">Opalite 1</a></li>
-                    <li><a href="#opalite-2-id">Opalite 2</a></li>
-                    <li><a href="#petrified-wood-id">Petrified Wood</a></li>
-                    <li><a href="#prasiolite-id">Prasiolite + Quartz</a></li>
-                    <li><a href="#pyrite-cube-id">Pyrite Cube</a></li>
-                    <li><a href="#pyrite-id">Pyrite</a></li>
-                    <li><a href="#shungite-id">Shungite</a></li>
-                    <li><a href="#silver-aura-quartz-id">Silver Aura Quartz</a></li>
-                </ol>
+                <li><a href="#stones-strip">Stone Collection</a></li>
                 <li><a href="#story-id">Stories Behind the Stones</a></li>
                 <li><a href="#colophon-id">Colophon</a></li>
             </ol>
         </nav>
-        <!-- Main content -->
-        <!-- Directory - flex and border-box -->
-        <div class="directory" id="directory-id">
-            <!-- title of the section -->
-            <p class="subtitle">Directory of Stones and Crystals</p>
-            <div class="stone-container">
-                <div class="stone amethyst">
-                    <a href="#12232023">
-                        <img src="image/amethyst.png" alt="amethyst">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="amethyst-id">AMETHYST haha</p>
-                        <p class="label label-time">Dec 23, 2023</p>
-                        <p class="label label-location">New York City</p>
-                        <p class="label label-info">Amethyst, a stunning purple quartz, is renowned for its beauty and
-                            metaphysical properties, believed to promote clarity of mind and inner peace. It's a popular
-                            choice in jewelry and spiritual practices, cherished for its calming energy and striking
-                            hue.</p>
-                    </div>
 
+        <!-- First horizontal strip - stone images -->
+        <div class="horizontal-strip stones-strip" id="stones-strip">
+            <div class="strip-content">
+                <!-- Stones ordered from small to large -->
+                <div class="stone-item" data-stone="pyrite">
+                    <img src="image/pyrite.png" alt="pyrite" class="stone-img">
+                    <p class="stone-name">PYRITE</p>
                 </div>
-                <div class="stone bornite">
-                    <a href="#03192023">
-                        <img src="image/bornite.png" alt="bornite">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="bornite-id">BORNITE</p>
-                        <p class="label label-time">Mar 19, 2023</p>
-                        <p class="label label-location">New York City</p>
-                        <p class="label label-info">Bornite, also known as peacock ore, exhibits a mesmerizing
-                            iridescent surface with vibrant hues ranging from blue to purple. This copper sulfide
-                            mineral is prized by collectors for its striking appearance and is often used in jewelry and
-                            decorative pieces.</p>
-                    </div>
+                <div class="stone-item" data-stone="silver-aura-quartz">
+                    <img src="image/silver-aura-quartz.png" alt="silver-aura-quartz" class="stone-img">
+                    <p class="stone-name">SILVER AURA QUARTZ</p>
                 </div>
-                <div class="stone galena">
-                    <a href="#05152022">
-                        <img src="image/galena.png" alt="galena">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="galena-id">GALENA</p>
-                        <p class="label label-time">May 15, 2022</p>
-                        <p class="label label-location">St. Louis, MO</p>
-                        <p class="label label-info">Galena, a lead sulfide mineral, is recognized for its metallic
-                            luster and distinctive cubic crystal structure. Historically valued for its lead content,
-                            Galena is also appreciated in crystal healing practices for its grounding properties and
-                            connection to the earth element.</p>
-                    </div>
+                <div class="stone-item" data-stone="opalite-1">
+                    <img src="image/opalite-1.png" alt="opalite-1" class="stone-img">
+                    <p class="stone-name">OPALITE 1</p>
                 </div>
-                <div class="stone kyanite">
-                    <a href="#06112022">
-                        <img src="image/kyanite.png" alt="kyanite">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="kyanite-id">KYANITE</p>
-                        <p class="label label-time">June 11, 2022</p>
-                        <p class="label label-location">New York City</p>
-                        <p class="label label-info">
-                            Kyanite, a blue silicate mineral, is renowned for its remarkable anisotropic properties,
-                            displaying different colors when viewed from different angles. Resonating with the throat
-                            chakra, Kyanite is believed to promote communication, self-expression, and alignment of
-                            one's energy centers.</p>
-                    </div>
+                <div class="stone-item" data-stone="opalite-2">
+                    <img src="image/opalite-2.png" alt="opalite-2" class="stone-img">
+                    <p class="stone-name">OPALITE 2</p>
                 </div>
-                <div class="stone labradorite">
-                    <a href="#05112022">
-                        <img src="image/labradorite.png" alt="labradorite">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="labradorite-id">LABRADORITE</p>
-                        <p class="label label-time">May 11, 2022</p>
-                        <p class="label label-location">St. Louis, MO</p>
-                        <p class="label label-info">
-                            Labradorite, known for its stunning iridescence called labradorescence, captivates with
-                            flashes of blue, green, and gold hues. This feldspar mineral is cherished for its mystical
-                            properties, believed to enhance intuition, protect against negative energies, and promote
-                            spiritual awakening.</p>
-                    </div>
+                <div class="stone-item" data-stone="kyanite">
+                    <img src="image/kyanite.png" alt="kyanite" class="stone-img">
+                    <p class="stone-name">KYANITE</p>
                 </div>
-                <div class="stone opalite-1">
-                    <a href="#08162023">
-                        <img src="image/opalite-1.png" alt="opalite-1">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="opalite-1-id">OPALITE 1</p>
-                        <p class="label label-time">Aug 16, 2023</p>
-                        <p class="label label-location">Salem, MA</p>
-                        <p class="label label-info">
-                            Opalite, often referred to as "sea opal" or "moonstone," is a man-made glass infused with
-                            opalescent properties, resembling the ethereal glow of moonlight. It is cherished for its
-                            calming energy and is believed to promote serenity, emotional balance, and spiritual growth.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="pyrite-cube">
+                    <img src="image/pyrite-cube.png" alt="pyrite-cube" class="stone-img">
+                    <p class="stone-name">PYRITE CUBE</p>
                 </div>
-                <div class="stone opalite-2">
-                    <a href="#08162023">
-                        <img src="image/opalite-2.png" alt="opalite-2">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="opalite-2-id">OPALITE 2</p>
-                        <p class="label label-time">Aug 16, 2023</p>
-                        <p class="label label-location">Salem, MA </p>
-                        <p class="label label-info">
-                            Opalite, often referred to as "sea opal" or "moonstone," is a man-made glass infused with
-                            opalescent properties, resembling the ethereal glow of moonlight. It is cherished for its
-                            calming energy and is believed to promote serenity, emotional balance, and spiritual growth.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="galena">
+                    <img src="image/galena.png" alt="galena" class="stone-img">
+                    <p class="stone-name">GALENA</p>
                 </div>
-                <div class="stone petrified-wood">
-                    <a href="#08162023">
-                        <img src="image/petrified-wood.png" alt="petrified-wood">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="petrified-wood-id">PETRIFIED WOOD</p>
-                        <p class="label label-time">Aug 16, 2023</p>
-                        <p class="label label-location">Salem, MA</p>
-                        <p class="label label-info">
-                            Petrified wood is fossilized wood transformed into stone through mineral replacement,
-                            showcasing vivid colors and preserved wood grain. Appreciated for its unique appearance and
-                            grounding properties, it holds a connection to both geological history and spiritual realms.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="bornite">
+                    <img src="image/bornite.png" alt="bornite" class="stone-img">
+                    <p class="stone-name">BORNITE</p>
                 </div>
-                <div class="stone prasiolite">
-                    <a href="#02112024">
-                        <img src="image/prasiolite.png" alt="prasiolite">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="prasiolite-id">PRASIOLITE + QUARTZ</p>
-                        <p class="label label-time">Feb 11, 2024</p>
-                        <p class="label label-location">Chicago, IL</p>
-                        <p class="label label-info">
-                            Prasiolite, a green variety of quartz, combines with clear quartz to create a harmonious
-                            blend of energies, balancing emotional clarity with spiritual growth. This unique fusion
-                            stone is cherished for its soothing properties and ability to enhance meditation practices.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="shungite">
+                    <img src="image/shungite.png" alt="shungite" class="stone-img">
+                    <p class="stone-name">SHUNGITE</p>
                 </div>
-                <div class="stone pyrite-cube">
-                    <a href="#02112024">
-                        <img src="image/pyrite-cube.png" alt="pyrite-cube">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="pyrite-cube-id">PYRITE CUBE</p>
-                        <p class="label label-time">Feb 11, 2024</p>
-                        <p class="label label-location">Chicago, IL</p>
-                        <p class="label label-info">
-                            Pyrite cube, a unique form of pyrite mineral, exhibits a distinct cubic structure with
-                            metallic luster, often resembling small golden cubes. Known as "fool's gold," it holds
-                            fascination for its resemblance to real gold and is valued in crystal healing for its
-                            ability to enhance willpower and manifestation.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="labradorite">
+                    <img src="image/labradorite.png" alt="labradorite" class="stone-img">
+                    <p class="stone-name">LABRADORITE</p>
                 </div>
-                <div class="stone pyrite">
-                    <a href="#08162023">
-                        <img src="image/pyrite.png" alt="pyrite">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="pyrite-id">PYRITE</p>
-                        <p class="label label-time">Aug 16, 2023</p>
-                        <p class="label label-location">Salem, MA</p>
-                        <p class="label label-info">
-                            Pyrite, also known as "fool's gold," is a sulfide mineral prized for its metallic luster and
-                            brassy yellow hue. Often resembling gold, it has been historically valued for its use in
-                            jewelry and as a symbol of wealth, while also believed to possess protective and grounding
-                            properties in spiritual practices.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="petrified-wood">
+                    <img src="image/petrified-wood.png" alt="petrified-wood" class="stone-img">
+                    <p class="stone-name">PETRIFIED WOOD</p>
                 </div>
-                <div class="stone shungite">
-                    <a href="#12232023">
-                        <img src="image/shungite.png" alt="shungite">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="shungite-id">SHUNGITE</p>
-                        <p class="label label-time">Dec 23, 2023</p>
-                        <p class="label label-location">New York City</p>
-                        <p class="label label-info">
-                            Shungite, a lustrous black mineraloid abundant in Russia, is revered for its purported
-                            healing properties, believed to neutralize negative energies. Widely used for water
-                            purification and electromagnetic shielding, it's prized for its ability to counteract
-                            harmful influences.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="prasiolite">
+                    <img src="image/prasiolite.png" alt="prasiolite" class="stone-img">
+                    <p class="stone-name">PRASIOLITE + QUARTZ</p>
                 </div>
-                <div class="stone silver-aura-quartz">
-                    <a href="#08162023">
-                        <img src="image/silver-aura-quartz.png" alt="silver-aura-quartz">
-                    </a>
-                    <div class="label-container">
-                        <p class="label label-title" id="silver-aura-quartz-id">Silver Aura Quartz</p>
-                        <p class="label label-time">Aug 16, 2023</p>
-                        <p class="label label-location">Salem, MA</p>
-                        <p class="label label-info">
-                            Silver aura quartz, a stunning crystal infused with precious metals, exhibits a captivating
-                            iridescence reminiscent of moonlight on water. Known for enhancing intuition and spiritual
-                            connection, it's prized for its harmonizing energy and ability to uplift the spirit.
-                        </p>
-                    </div>
+                <div class="stone-item" data-stone="amethyst">
+                    <img src="image/amethyst.png" alt="amethyst" class="stone-img">
+                    <p class="stone-name">AMETHYST</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Second horizontal strip - stone information -->
+        <div class="horizontal-strip info-strip">
+            <div class="strip-content">
+                <!-- Stone information cards -->
+                <div class="info-card" id="pyrite-info">
+                    <p class="label label-title">PYRITE</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Pyrite, also known as "fool's gold," is a sulfide mineral prized for its metallic luster and
+                        brassy yellow hue. Often resembling gold, it has been historically valued for its use in
+                        jewelry and as a symbol of wealth, while also believed to possess protective and grounding
+                        properties in spiritual practices.
+                    </p>
+                </div>
+                <div class="info-card" id="silver-aura-quartz-info">
+                    <p class="label label-title">SILVER AURA QUARTZ</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Silver aura quartz, a stunning crystal infused with precious metals, exhibits a captivating
+                        iridescence reminiscent of moonlight on water. Known for enhancing intuition and spiritual
+                        connection, it's prized for its harmonizing energy and ability to uplift the spirit.
+                    </p>
+                </div>
+                <div class="info-card" id="opalite-1-info">
+                    <p class="label label-title">OPALITE 1</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Opalite, often referred to as "sea opal" or "moonstone," is a man-made glass infused with
+                        opalescent properties, resembling the ethereal glow of moonlight. It is cherished for its
+                        calming energy and is believed to promote serenity, emotional balance, and spiritual growth.
+                    </p>
+                </div>
+                <div class="info-card" id="opalite-2-info">
+                    <p class="label label-title">OPALITE 2</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Opalite, often referred to as "sea opal" or "moonstone," is a man-made glass infused with
+                        opalescent properties, resembling the ethereal glow of moonlight. It is cherished for its
+                        calming energy and is believed to promote serenity, emotional balance, and spiritual growth.
+                    </p>
+                </div>
+                <div class="info-card" id="kyanite-info">
+                    <p class="label label-title">KYANITE</p>
+                    <p class="label label-time">June 11, 2022</p>
+                    <p class="label label-location">New York City</p>
+                    <p class="label label-info">
+                        Kyanite, a blue silicate mineral, is renowned for its remarkable anisotropic properties,
+                        displaying different colors when viewed from different angles. Resonating with the throat
+                        chakra, Kyanite is believed to promote communication, self-expression, and alignment of
+                        one's energy centers.
+                    </p>
+                </div>
+                <div class="info-card" id="pyrite-cube-info">
+                    <p class="label label-title">PYRITE CUBE</p>
+                    <p class="label label-time">Feb 11, 2024</p>
+                    <p class="label label-location">Chicago, IL</p>
+                    <p class="label label-info">
+                        Pyrite cube, a unique form of pyrite mineral, exhibits a distinct cubic structure with
+                        metallic luster, often resembling small golden cubes. Known as "fool's gold," it holds
+                        fascination for its resemblance to real gold and is valued in crystal healing for its
+                        ability to enhance willpower and manifestation.
+                    </p>
+                </div>
+                <div class="info-card" id="galena-info">
+                    <p class="label label-title">GALENA</p>
+                    <p class="label label-time">May 15, 2022</p>
+                    <p class="label label-location">St. Louis, MO</p>
+                    <p class="label label-info">
+                        Galena, a lead sulfide mineral, is recognized for its metallic
+                        luster and distinctive cubic crystal structure. Historically valued for its lead content,
+                        Galena is also appreciated in crystal healing practices for its grounding properties and
+                        connection to the earth element.
+                    </p>
+                </div>
+                <div class="info-card" id="bornite-info">
+                    <p class="label label-title">BORNITE</p>
+                    <p class="label label-time">Mar 19, 2023</p>
+                    <p class="label label-location">New York City</p>
+                    <p class="label label-info">
+                        Bornite, also known as peacock ore, exhibits a mesmerizing
+                        iridescent surface with vibrant hues ranging from blue to purple. This copper sulfide
+                        mineral is prized by collectors for its striking appearance and is often used in jewelry and
+                        decorative pieces.
+                    </p>
+                </div>
+                <div class="info-card" id="shungite-info">
+                    <p class="label label-title">SHUNGITE</p>
+                    <p class="label label-time">Dec 23, 2023</p>
+                    <p class="label label-location">New York City</p>
+                    <p class="label label-info">
+                        Shungite, a lustrous black mineraloid abundant in Russia, is revered for its purported
+                        healing properties, believed to neutralize negative energies. Widely used for water
+                        purification and electromagnetic shielding, it's prized for its ability to counteract
+                        harmful influences.
+                    </p>
+                </div>
+                <div class="info-card" id="labradorite-info">
+                    <p class="label label-title">LABRADORITE</p>
+                    <p class="label label-time">May 11, 2022</p>
+                    <p class="label label-location">St. Louis, MO</p>
+                    <p class="label label-info">
+                        Labradorite, known for its stunning iridescence called labradorescence, captivates with
+                        flashes of blue, green, and gold hues. This feldspar mineral is cherished for its mystical
+                        properties, believed to enhance intuition, protect against negative energies, and promote
+                        spiritual awakening.
+                    </p>
+                </div>
+                <div class="info-card" id="petrified-wood-info">
+                    <p class="label label-title">PETRIFIED WOOD</p>
+                    <p class="label label-time">Aug 16, 2023</p>
+                    <p class="label label-location">Salem, MA</p>
+                    <p class="label label-info">
+                        Petrified wood is fossilized wood transformed into stone through mineral replacement,
+                        showcasing vivid colors and preserved wood grain. Appreciated for its unique appearance and
+                        grounding properties, it holds a connection to both geological history and spiritual realms.
+                    </p>
+                </div>
+                <div class="info-card" id="prasiolite-info">
+                    <p class="label label-title">PRASIOLITE + QUARTZ</p>
+                    <p class="label label-time">Feb 11, 2024</p>
+                    <p class="label label-location">Chicago, IL</p>
+                    <p class="label label-info">
+                        Prasiolite, a green variety of quartz, combines with clear quartz to create a harmonious
+                        blend of energies, balancing emotional clarity with spiritual growth. This unique fusion
+                        stone is cherished for its soothing properties and ability to enhance meditation practices.
+                    </p>
+                </div>
+                <div class="info-card" id="amethyst-info">
+                    <p class="label label-title">AMETHYST</p>
+                    <p class="label label-time">Dec 23, 2023</p>
+                    <p class="label label-location">New York City</p>
+                    <p class="label label-info">
+                        Amethyst, a stunning purple quartz, is renowned for its beauty and
+                        metaphysical properties, believed to promote clarity of mind and inner peace. It's a popular
+                        choice in jewelry and spiritual practices, cherished for its calming energy and striking
+                        hue.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stories section -->
+        <div class="stories-section" id="story-id">
+            <p class="subtitle">Stories Behind the Stones</p>
             <div class="story-container">
-                <p class="subtitle" id="story-id">Stories Behind the Stones</p>
+                <div class="story" id="05112022">
+                    <p>May 11, 2022</p>
+                    <p>On my last day in NYC during Christmas season, in the evening just before my bus to
+                        Providence, Tina and I went to a crystal shop called Evolution just opposite New York
+                        University in Noho. This store doesn't specifically sells crystals and stones— just like its
+                        name, it sells fossils, skulls and weird stuff alike. I bought this Amethyst alongside with
+                        a Shungite.</p>
+                </div>
 
-                <div class="story-directory">
-                    <div class="story" id="05112022">
-                        <p>May 11, 2022</p>
-                        <p>On my last day in NYC during Christmas season, in the evening just before my bus to
-                            Providence, Tina and I went to a crystal shop called Evolution just opposite New York
-                            University in Noho. This store doesn't specifically sells crystals and stones— just like its
-                            name, it sells fossils, skulls and weird stuff alike. I bought this Amethyst alongside with
-                            a Shungite.</p>
-                    </div>
+                <div class="story" id="05152022">
+                    <p>May 15, 2022</p>
+                    <p>This stone has a fond memory, and actually marked the beginning of my official stone/crystal
+                        collection (if not counting the one stone I collected from the beach of Dover in the UK when
+                        I was 14, or the jade-like stone my Dad gave me when I was around 15-16 that has been
+                        sitting on my desk in Nanjing until we moved.)
 
-                    <div class="story" id="05152022">
-                        <p>May 15, 2022</p>
-                        <p>This stone has a fond memory, and actually marked the beginning of my official stone/crystal
-                            collection (if not counting the one stone I collected from the beach of Dover in the UK when
-                            I was 14, or the jade-like stone my Dad gave me when I was around 15-16 that has been
-                            sitting on my desk in Nanjing until we moved.)
+                        It was just after the conclusion of my undergrad classes and was a period of pure
+                        celebration, and I was waiting for the commencement before we officially call our undergrad
+                        life a close. My design capstone professor Amy invited all of our class to her house for a
+                        yard party. It was a sunny afternoon. After I spent the day with Eugenia, I took a cab to
+                        Amy's house where everybody was already hanging out for a short bit. We sat around in a
+                        circle in Amy's leafy backyard that's on a slope. Amy went inside, took out a deck of cards,
+                        on each of which is written a cute conclusion of our personality traits gathered from our
+                        earlier Google Form responses of each other. Amy handed out the cards after reading all of
+                        them aloud one by one and having us guess the owner, and asked us to see the back of the
+                        card. On the back side of the card, it writes "You Rock!" Then Amy took out a small bowl of
+                        rocks, and said "Now come pick your rock" before placing the rock pile in the middle of the
+                        circle. I saw this shiny rock first, and as attracted to shiny things like a bird as I was,
+                        I rushed to the pile to grab it first. Amy said that when she purchased the rocks, she had
+                        an idea of which rock would be picked by whom. "Selina, I didn't think that you would pick
+                        this rock," she said.
 
-                            It was just after the conclusion of my undergrad classes and was a period of pure
-                            celebration, and I was waiting for the commencement before we officially call our undergrad
-                            life aclose. My design capstone professor Amy invited all of our class to her house for a
-                            yard party. It was a sunny afternoon. After I spent the day with Eugenia, I took a cab to
-                            Amy's house where everybody was already hanging out for a short bit. We sat around in a
-                            circle in Amy's leafy backyard that's on a slope. Amy went inside, took out a deck of cards,
-                            on each of which is written a cute conclusion of our personality traits gathered from our
-                            earlier Google Form responses of each other. Amy handed out the cards after reading all of
-                            them aloud one by one and having us guess the owner, and asked us to see the back of the
-                            card. On the back side of the card, it writes "You Rock!" Then Amy took out a small bowl of
-                            rocks, and said "Now come pick your rock" before placing the rock pile in the middle of the
-                            circle. I saw this shiny rock first, and as attracted to shiny things like a bird as I was,
-                            I rushed to the pile to grab it first. Amy said that when she purchased the rocks, she had
-                            an idea of which rock would be picked by whom. "Selina, I didn't think that you would pick
-                            this rock," she said.
+                        This rock has a big density and is very heavy. The photographed rock is actually only a part
+                        (75%) of the rock that I got from Amy. As the rock is formed with layers, it got fragile and
+                        broke from a crack. In the hassle of moving, I ditched the broken part and only kept the
+                        main body.
 
-                            This rock has a big density and is very heavy. The photographed rock is actually only a part
-                            (75%) of the rock that I got from Amy. As the rock is formed with layers, it got fragile and
-                            broke from a crack. In the hassle of moving, I ditched the broken part and only kept the
-                            main body.
+                        Just now (02/04/2024), I learned that Galena is actually the state gem of Missouri?! What a
+                        coincidence!</p>
+                </div>
 
-                            Just now (02/04/2024), I learned that Galena is actually the state gem of Missouri?! What a
-                            coincidence!</p>
-                    </div>
+                <!-- Other stories remain the same -->
+                <div class="story" id="06112022">
+                    <p>June 11, 2022</p>
+                    <p>Bought on the weekend of Juneteenth in the Juneteenth open market in Washington Square Park.
+                        The seller told me it symbolizes purification. I forgot if the stone has names or not (most
+                        likely not), so I compared it to info online and think it's a Kyanite.</p>
+                </div>
 
-                    <div class="story" id="06112022">
-                        <p>June 11, 2022</p>
-                        <p>Bought on the weekend of Juneteenth in the Juneteenth open market in Washington Square Park.
-                            The seller told me it symbolizes purification. I forgot if the stone has names or not (most
-                            likely not), so I compared it to info online and think it's a Kyanite.</p>
-                    </div>
+                <div class="story" id="03192023">
+                    <p>March 19, 2023</p>
+                    <p>Acquired with Tina as she bought a beautiful titanian aura quartz, and the one she picked is
+                        unique — according to the shop owner, her stone is a three-in-one crystal. I did instantly
+                        feel my bornite, or peacock ore, was dulled down compared to such an amazing rock Tina has
+                        chose, but I forgot that bornite is one of the most beautiful stones out there in the world.
+                    </p>
+                </div>
 
-                    <div class="story" id="03192023">
-                        <p>March 19, 2023</p>
-                        <p>Acquired with Tina as she bought a beautiful titanian aura quartz, and the one she picked is
-                            unique — according to the shop owner, her stone is a three-in-one crystal. I did instantly
-                            feel my bornite, or peacock ore, was dulled down compared to such an amazing rock Tina has
-                            chose, but I forgot that bornite is one of the most beautiful stones out there in the world.
-                        </p>
-                    </div>
+                <div class="story" id="08162023">
+                    <p>August 16, 2023</p>
+                    <p>Bought at a store in Salem, the Witch City. Everything bought that day except the pet wood
+                        are bought from a store that feels like a witch grocery store. The pet wood is bought from a
+                        specifically crystal-dedicated store. I visited Salem the second day after I arrived in
+                        Providence on Aug 15 to see Tina before she left Boston on Aug 17.
+                    </p>
+                </div>
 
-                    <div class="story" id="08162023">
-                        <p>Augest 16, 2023</p>
-                        <p>Bought at a store in Salem, the Witch City. Everything bought that day except the pet wood
-                            are bought from a store that feels like a witch grocery store. The pet wood is bought from a
-                            specifically crystal-dedicated store. I visited Salem the second day after I arrived in
-                            Providence on Aug 15 to see Tina before she left Boston on Aug 17.
-                        </p>
-                    </div>
+                <div class="story" id="12232023">
+                    <p>December 23, 2023</p>
+                    <p>On my last day in NYC during Christmas season, in the evening just before my bus to
+                        Providence, Tina and I went to a crystal shop called Evolution just opposite New York
+                        University in NoHo. This store doesn't specifically sells crystals and stones — just like
+                        its name, it sells fossils, skulls and weird stuff alike. I bought an Amethyst alongside
+                        with a Shungite.
+                    </p>
+                </div>
 
-                    <div class="story" id="12232023">
-                        <p>December 23, 2023</p>
-                        <p>On my last day in NYC during Christmas season, in the evening just before my bus to
-                            Providence, Tina and I went to a crystal shop called Evolution just opposite New York
-                            University in NoHo. This store doesn't specifically sells crystals and stones — just like
-                            its name, it sells fossils, skulls and weird stuff alike. I bought an Amethyst alongside
-                            with a Shungite.
-                        </p>
-                    </div>
+                <div class="story" id="02112024">
+                    <p>February 11, 2024</p>
+                    <p>On the second last day of my visit in Chicago, after saying goodbye to Houston around 3pm
+                        after a sleepover at his place and a casual brunch in Andersonville, Houston headed to his
+                        date at 4pm and I set foot on my solo journey in Northwest Chicago. During brunch, I told
+                        Houston that I'd love to take home a stone bought in Chicago to my collection; Houston, a
+                        fellow stone/crystal collector, has told me about a store he frequented, which however upon
+                        our checking, was temporarily closed. Then I found this store called The Chakra Shoppe
+                        30-min bus drive from Houston's place, but complained that the graphic design of the
+                        storefront and the overall interior design of the store is cheesy. "You know— that's how you
+                        know their stones aren't expensive," Houston said.
 
-                    <div class="story" id="02112024">
-                        <p>February 11, 2024</p>
-                        <p>On the second last day of my visit in Chicago, after saying goodbye to Houston around 3pm
-                            after a sleepover at his place and a casual brunch in Andersonville, Houston headed to his
-                            date at 4pm and I set foot on my solo journey in Northwest Chicago. During brunch, I told
-                            Houston that I'd love to take home a stone bought in Chicago to my collection; Houston, a
-                            fellow stone/crystal collector, has told me about a store he frequented, which however upon
-                            our checking, was temporarily closed. Then I found this store called The Chakra Shoppe
-                            30-min bus drive from Houston's place, but complained that the graphic design of the
-                            storefront and the overall interior design of the store is cheesy. "You know— that's how you
-                            know their stones aren't expensive," Houston said.
+                        Persuaded by what he said, I decided to visit this store anyways. The bus immediately came
+                        as I arrived at the stop, despite the long wait that Google Map suggested, which almost
+                        seemed like a reward to my determination to get the stone even knowing the trip was not
+                        convenient. The part of the town was more desolate and quiet and didn't seem like neither a
+                        touristy place nor a neighborhood. As I walked into the store, an old but fierce-eyed man
+                        greeted me and immediately told me that today they had three gurus in store in the back
+                        ("guru" is the not exact word that he used) to read your chakra, energy and such. I answered
+                        him in my mind that I don't believe stuff like this— I just want pretty stones, but zipped
+                        myself up as I wanted to pay respect, and again, I was agnostic.
 
-                            Persuaded by what he said, I decided to visit this store anyways. The bus immediately came
-                            as I arrived at the stop, despite the long wait that Google Map suggested, which almost
-                            seemed like a reward to my determination to get the stone even knowing the trip was not
-                            convenient. The part of the town was more desolate and quiet and didn't seem like neither a
-                            touristy place nor a neighborhood. As I walked into the store, an old but fierce-eyed man
-                            greeted me and immediately told me that today they had three gurus in store in the back
-                            ("guru" is the not exact word that he used) to read your chakra, energy and such. I answered
-                            him in my mind that I don't believe stuff like this— I just want pretty stones, but zipped
-                            myself up as I wanted to pay respect, and again, I was agnostic.
-
-                            All their natural stones are displayed in the wall shelf behind the counter, so with their
-                            permission I went in and started asking questions. Blanche, a kind, smiley white old lady
-                            with long blonde hair assisted me and answered my questions about the stones. She kept
-                            mentioning the chakras the stones help strengthening. I started to wonder how much they
-                            truly believe in the chakras and how much of it is performance for sales, but she seemed
-                            genuine, and I was happy listening to her talking about stones passionately. Sometimes when
-                            Blanche didn't know the stone I was asking, she went to a book, pushed down her glasses and
-                            looked it up for me. Now I understood why the storefront was "cheesy" because it was
-                            maintained by older folks, and suddenly the storefront and interior seemed very lovely.
-                        </p>
-                    </div>
+                        All their natural stones are displayed in the wall shelf behind the counter, so with their
+                        permission I went in and started asking questions. Blanche, a kind, smiley white old lady
+                        with long blonde hair assisted me and answered my questions about the stones. She kept
+                        mentioning the chakras the stones help strengthening. I started to wonder how much they
+                        truly believe in the chakras and how much of it is performance for sales, but she seemed
+                        genuine, and I was happy listening to her talking about stones passionately. Sometimes when
+                        Blanche didn't know the stone I was asking, she went to a book, pushed down her glasses and
+                        looked it up for me. Now I understood why the storefront was "cheesy" because it was
+                        maintained by older folks, and suddenly the storefront and interior seemed very lovely.
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <div class="colophon-container">
-                <p class="subtitle" id="colophon-id">Colophon</p>
-                    <div class="story" id="05112022">
-                        <p>Typeset in Bradford Mono from Lineto designed by Laurenz Brunner, and Jabin designed by fridamedrano.</p>
-                    </div>
-
+        <!-- Colophon -->
+        <div class="colophon-container" id="colophon-id">
+            <p class="subtitle">Colophon</p>
+            <div class="story">
+                <p>Typeset in Bradford Mono from Lineto designed by Laurenz Brunner, and Jabin designed by fridamedrano.</p>
+            </div>
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stoneItems = document.querySelectorAll('.stone-item');
+            
+            // Add click event to each stone
+            stoneItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const stoneName = this.getAttribute('data-stone');
+                    
+                    // Center this stone in the viewport
+                    this.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'center'
+                    });
+                    
+                    // Find and center the corresponding info card
+                    const infoCard = document.getElementById(`${stoneName}-info`);
+                    if (infoCard) {
+                        setTimeout(() => {
+                            infoCard.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center',
+                                inline: 'center'
+                            });
+                        }, 500); // Slight delay for visual effect
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
