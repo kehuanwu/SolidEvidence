@@ -11,16 +11,31 @@
 </head>
 
 <body>
-    <!-- Landing section - kept similar to original -->
+    <!-- Landing section with updated text -->
     <div class="opener" id="introduction">
-        <p><span class="glow-text">Documenting</span> <span class="glow-text">my</span> <span
-                class="glow-text">stones</span> <span class="glow-text">and</span> <span
-                class="glow-text">crystals.</span> <span class="glow-text">Name,</span> <span
-                class="glow-text">date</span> <span class="glow-text">and</span> <span class="glow-text">location</span>
-            <span class="glow-text">acquired,</span> <span class="glow-text">and</span> <span
-                class="glow-text">metaphysical</span> <span class="glow-text">meaning.</span>
-        </p>
-        <p class="scroll-hint">Scroll down to explore the collection</p>
+        <div class="landing-content">
+            <p class="main-text"><span class="glow-text">A</span> <span class="glow-text">Catalogue</span> <span
+                    class="glow-text">of</span> <span class="glow-text">Solid</span> <span
+                    class="glow-text">Evidence</span> <span class="glow-text">quietly</span> <span
+                    class="glow-text">archives</span> <span class="glow-text">Selina's</span> <span
+                    class="glow-text">stones</span> <span class="glow-text">and</span> <span
+                    class="glow-text">crystals,</span> <span class="glow-text">recording</span> <span
+                    class="glow-text">their</span> <span class="glow-text">names,</span> <span
+                    class="glow-text">dates</span> <span class="glow-text">and</span> <span
+                    class="glow-text">places</span> <span class="glow-text">acquired,</span> <span
+                    class="glow-text">and</span> <span class="glow-text">the</span> <span
+                    class="glow-text">memories</span> <span class="glow-text">they</span> <span
+                    class="glow-text">carry.</span>
+            </p>
+            <div class="bottom-elements">
+                <p class="scroll-hint">Scroll down to explore the collection</p>
+                <div class="scroll-arrow" id="scroll-arrow">
+                    <svg width="50" height="30" viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5 L25 25 L45 5" stroke="rgb(195, 195, 195)" stroke-width="1.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Parallax section container -->
@@ -354,6 +369,17 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Scroll arrow functionality
+            const scrollArrow = document.getElementById('scroll-arrow');
+            const stonesSection = document.getElementById('stones-strip');
+            
+            scrollArrow.addEventListener('click', function() {
+                stonesSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+            
             // Drag functionality for the stone strip
             enableDragging(document.querySelector('.stones-strip'));
             
@@ -434,20 +460,33 @@
                 let isDown = false;
                 let startX;
                 let scrollLeft;
+                let momentumID;
+                let velocity = 0;
+                let lastX = 0;
+                let timestamp = 0;
                 
                 element.addEventListener('mousedown', (e) => {
                     isDown = true;
                     element.classList.add('active');
                     startX = e.pageX - element.offsetLeft;
                     scrollLeft = element.scrollLeft;
+                    lastX = e.pageX;
+                    timestamp = Date.now();
+                    clearInterval(momentumID);
                 });
                 
                 element.addEventListener('mouseleave', () => {
+                    if (isDown) {
+                        startMomentumScroll();
+                    }
                     isDown = false;
                     element.classList.remove('active');
                 });
                 
                 element.addEventListener('mouseup', () => {
+                    if (isDown) {
+                        startMomentumScroll();
+                    }
                     isDown = false;
                     element.classList.remove('active');
                 });
@@ -456,8 +495,18 @@
                     if (!isDown) return;
                     e.preventDefault();
                     const x = e.pageX - element.offsetLeft;
-                    const walk = (x - startX) * 2; // Scroll speed multiplier
+                    const walk = (x - startX) * 2;
                     element.scrollLeft = scrollLeft - walk;
+                    
+                    // Calculate velocity for momentum
+                    const now = Date.now();
+                    const dt = now - timestamp;
+                    if (dt > 0) {
+                        const dx = e.pageX - lastX;
+                        velocity = dx / dt;
+                    }
+                    lastX = e.pageX;
+                    timestamp = now;
                 });
                 
                 // Touch events for mobile
@@ -466,9 +515,15 @@
                     element.classList.add('active');
                     startX = e.touches[0].pageX - element.offsetLeft;
                     scrollLeft = element.scrollLeft;
+                    lastX = e.touches[0].pageX;
+                    timestamp = Date.now();
+                    clearInterval(momentumID);
                 }, { passive: true });
                 
                 element.addEventListener('touchend', () => {
+                    if (isDown) {
+                        startMomentumScroll();
+                    }
                     isDown = false;
                     element.classList.remove('active');
                 });
@@ -478,8 +533,77 @@
                     const x = e.touches[0].pageX - element.offsetLeft;
                     const walk = (x - startX) * 2;
                     element.scrollLeft = scrollLeft - walk;
+                    
+                    // Calculate velocity for momentum
+                    const now = Date.now();
+                    const dt = now - timestamp;
+                    if (dt > 0) {
+                        const dx = e.touches[0].pageX - lastX;
+                        velocity = dx / dt;
+                    }
+                    lastX = e.touches[0].pageX;
+                    timestamp = now;
                 }, { passive: true });
+                
+                function startMomentumScroll() {
+                    clearInterval(momentumID);
+                    
+                    momentumID = setInterval(() => {
+                        if (Math.abs(velocity) < 0.1) {
+                            clearInterval(momentumID);
+                            return;
+                        }
+                        
+                        element.scrollLeft -= velocity * 25; // 16ms is approx. one frame
+                        velocity *= 5; // Friction factor
+                    }, 16);
+                }
             }
+            
+            // Add scroll snap behavior
+            const sections = document.querySelectorAll('section, .opener, .horizontal-strip, .stories-section, .colophon-container');
+            let isScrolling = false;
+            let currentSection = 0;
+            
+            // Initialize IntersectionObserver to detect which section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !isScrolling) {
+                        const index = Array.from(sections).indexOf(entry.target);
+                        if (index !== -1) {
+                            currentSection = index;
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Add wheel event for smooth scrolling between sections
+            window.addEventListener('wheel', (e) => {
+                if (isScrolling) return;
+                
+                isScrolling = true;
+                
+                if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                    // Scroll down
+                    currentSection++;
+                } else if (e.deltaY < 0 && currentSection > 0) {
+                    // Scroll up
+                    currentSection--;
+                }
+                
+                sections[currentSection].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 800); // Adjust time based on scroll transition duration
+            }, { passive: true });
         });
     </script>
 </body>

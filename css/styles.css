@@ -11,6 +11,9 @@
 html {
     cursor: url('../image/cursor.svg'), auto;
     scroll-behavior: smooth;
+    height: 100%;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -39,25 +42,51 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 4rem;
     position: relative;
     background-color: #000000;
+    scroll-snap-align: start;
+    overflow: hidden;
 }
 
-.opener p {
+.landing-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Position content towards bottom */
+    padding-left: 4rem;
+    padding-bottom: 6rem; /* Space from bottom */
+}
+
+.main-text {
     font-family: jabin;
     font-size: 100px;
     font-weight: 20;
     line-height: 6rem;
     max-width: 90%;
+    margin-bottom: 3rem; /* Space between main text and scroll hint */
+}
+
+.bottom-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 8rem); /* Adjust width to account for padding */
 }
 
 .scroll-hint {
-    font-size: 16px !important;
-    margin-top: 2rem;
+    font-size: 16px;
     opacity: 0.7;
+    animation: fade 2s infinite alternate;
+    margin-bottom: 6rem; /* 150% of the left margin (4rem) */
+}
+
+.scroll-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 6rem; /* Same as scroll-hint margin */
+    transform: translateX(-50%);
+    cursor: pointer;
     animation: fade 2s infinite alternate;
 }
 
@@ -78,7 +107,6 @@ body {
 /* Parallax container styling */
 .parallax-container {
     position: relative;
-    height: auto;
     width: 100%;
     background-color: #000000;
 }
@@ -131,7 +159,7 @@ body {
 
 /* Horizontal strips styling */
 .horizontal-strip {
-    height: 60vh;
+    height: 45vh; /* Adjusted to ensure both strips fit vertically */
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -139,6 +167,7 @@ body {
     position: relative;
     background-color: #000000;
     cursor: grab;
+    scroll-snap-align: start;
 }
 
 .horizontal-strip.active {
@@ -146,28 +175,31 @@ body {
     cursor: -webkit-grabbing;
 }
 
+.stones-strip {
+    padding: 5rem 0; /* Increased padding to prevent glow cutoff */
+    display: flex;
+    align-items: center; /* Vertically center stones */
+}
+
 .strip-content {
     display: inline-flex;
     padding: 0 0 0 4rem; /* Start from left with minimal padding */
+    align-items: center; /* Vertically center items */
+    height: 100%;
 }
 
 /* Stone items styling */
-.stones-strip {
-    background-color: #000000;
-    padding: 3rem 0; /* Added extra padding to prevent glow cutoff */
-}
-
 .stone-item {
     display: inline-block;
     text-align: center;
-    margin: 0 1.5rem; /* Reduced spacing by 60% */
+    margin: 0 1.8rem; /* Increased spacing by 20% from previous 1.5rem */
     cursor: pointer;
     transform-origin: center center; /* Ensure transform happens from center */
 }
 
 .stone-img {
     height: 80vh; /* Base height, will be adjusted per stone */
-    max-width: 450px; /* Increased by 30% */
+    max-width: 450px;
     object-fit: contain;
     transition: transform 2s ease, filter 2s ease; /* Slowed down transitions */
     transform-origin: center center;
@@ -180,52 +212,52 @@ body {
 
 /* Adjust various stone sizes to create progression but make them 30% larger */
 [data-stone="pyrite"] .stone-img {
-    height: 32.5vh; /* 25vh + 30% */
+    height: 32.5vh;
 }
 
 [data-stone="silver-aura-quartz"] .stone-img {
-    height: 39vh; /* 30vh + 30% */
+    height: 39vh;
 }
 
 [data-stone="opalite-1"] .stone-img, 
 [data-stone="opalite-2"] .stone-img {
-    height: 45.5vh; /* 35vh + 30% */
+    height: 45.5vh;
 }
 
 [data-stone="kyanite"] .stone-img {
-    height: 52vh; /* 40vh + 30% */
+    height: 52vh;
 }
 
 [data-stone="pyrite-cube"] .stone-img {
-    height: 54.6vh; /* 42vh + 30% */
+    height: 54.6vh;
 }
 
 [data-stone="galena"] .stone-img {
-    height: 57.2vh; /* 44vh + 30% */
+    height: 57.2vh;
 }
 
 [data-stone="bornite"] .stone-img {
-    height: 59.8vh; /* 46vh + 30% */
+    height: 59.8vh;
 }
 
 [data-stone="shungite"] .stone-img {
-    height: 62.4vh; /* 48vh + 30% */
+    height: 62.4vh;
 }
 
 [data-stone="labradorite"] .stone-img {
-    height: 65vh; /* 50vh + 30% */
+    height: 65vh;
 }
 
 [data-stone="petrified-wood"] .stone-img {
-    height: 67.6vh; /* 52vh + 30% */
+    height: 67.6vh;
 }
 
 [data-stone="prasiolite"] .stone-img {
-    height: 70.2vh; /* 54vh + 30% */
+    height: 70.2vh;
 }
 
 [data-stone="amethyst"] .stone-img {
-    height: 72.8vh; /* 56vh + 30% */
+    height: 72.8vh;
 }
 
 /* Info cards styling - left aligned now */
@@ -268,6 +300,7 @@ body {
 .stories-section {
     padding: 4rem;
     background-color: #000000;
+    scroll-snap-align: start;
 }
 
 .subtitle {
@@ -296,4 +329,5 @@ body {
 .colophon-container {
     padding: 4rem;
     background-color: #000000;
+    scroll-snap-align: start;
 }
