@@ -13,7 +13,6 @@
 <body>
     <!-- Landing section - kept similar to original -->
     <div class="opener" id="introduction">
-        <p class="star">⟡</p>
         <p><span class="glow-text">Documenting</span> <span class="glow-text">my</span> <span
                 class="glow-text">stones</span> <span class="glow-text">and</span> <span
                 class="glow-text">crystals.</span> <span class="glow-text">Name,</span> <span
@@ -42,55 +41,42 @@
                 <!-- Stones ordered from small to large -->
                 <div class="stone-item" data-stone="pyrite">
                     <img src="image/pyrite.png" alt="pyrite" class="stone-img">
-                    <p class="stone-name">PYRITE</p>
                 </div>
                 <div class="stone-item" data-stone="silver-aura-quartz">
                     <img src="image/silver-aura-quartz.png" alt="silver-aura-quartz" class="stone-img">
-                    <p class="stone-name">SILVER AURA QUARTZ</p>
                 </div>
                 <div class="stone-item" data-stone="opalite-1">
                     <img src="image/opalite-1.png" alt="opalite-1" class="stone-img">
-                    <p class="stone-name">OPALITE 1</p>
                 </div>
                 <div class="stone-item" data-stone="opalite-2">
                     <img src="image/opalite-2.png" alt="opalite-2" class="stone-img">
-                    <p class="stone-name">OPALITE 2</p>
                 </div>
                 <div class="stone-item" data-stone="kyanite">
                     <img src="image/kyanite.png" alt="kyanite" class="stone-img">
-                    <p class="stone-name">KYANITE</p>
                 </div>
                 <div class="stone-item" data-stone="pyrite-cube">
                     <img src="image/pyrite-cube.png" alt="pyrite-cube" class="stone-img">
-                    <p class="stone-name">PYRITE CUBE</p>
                 </div>
                 <div class="stone-item" data-stone="galena">
                     <img src="image/galena.png" alt="galena" class="stone-img">
-                    <p class="stone-name">GALENA</p>
                 </div>
                 <div class="stone-item" data-stone="bornite">
                     <img src="image/bornite.png" alt="bornite" class="stone-img">
-                    <p class="stone-name">BORNITE</p>
                 </div>
                 <div class="stone-item" data-stone="shungite">
                     <img src="image/shungite.png" alt="shungite" class="stone-img">
-                    <p class="stone-name">SHUNGITE</p>
                 </div>
                 <div class="stone-item" data-stone="labradorite">
                     <img src="image/labradorite.png" alt="labradorite" class="stone-img">
-                    <p class="stone-name">LABRADORITE</p>
                 </div>
                 <div class="stone-item" data-stone="petrified-wood">
                     <img src="image/petrified-wood.png" alt="petrified-wood" class="stone-img">
-                    <p class="stone-name">PETRIFIED WOOD</p>
                 </div>
                 <div class="stone-item" data-stone="prasiolite">
                     <img src="image/prasiolite.png" alt="prasiolite" class="stone-img">
-                    <p class="stone-name">PRASIOLITE + QUARTZ</p>
                 </div>
                 <div class="stone-item" data-stone="amethyst">
                     <img src="image/amethyst.png" alt="amethyst" class="stone-img">
-                    <p class="stone-name">AMETHYST</p>
                 </div>
             </div>
         </div>
@@ -368,33 +354,132 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Drag functionality for the stone strip
+            enableDragging(document.querySelector('.stones-strip'));
+            
+            // Drag functionality for the info strip
+            enableDragging(document.querySelector('.info-strip'));
+            
+            // Click event for each stone
             const stoneItems = document.querySelectorAll('.stone-item');
             
-            // Add click event to each stone
             stoneItems.forEach(item => {
                 item.addEventListener('click', function() {
                     const stoneName = this.getAttribute('data-stone');
-                    
-                    // Center this stone in the viewport
-                    this.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center',
-                        inline: 'center'
-                    });
-                    
-                    // Find and center the corresponding info card
                     const infoCard = document.getElementById(`${stoneName}-info`);
-                    if (infoCard) {
-                        setTimeout(() => {
-                            infoCard.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center',
-                                inline: 'center'
+                    
+                    // Get both elements
+                    const stoneSection = document.querySelector('.stones-strip');
+                    const infoSection = document.querySelector('.info-strip');
+                    
+                    // Calculate positions
+                    const stoneRect = this.getBoundingClientRect();
+                    const stoneCenter = stoneRect.left + stoneRect.width/2;
+                    const viewportCenter = window.innerWidth/2;
+                    const stoneOffset = stoneCenter - viewportCenter;
+                    
+                    // Calculate if this is the first or last stone
+                    const isFirst = this === stoneItems[0];
+                    const isLast = this === stoneItems[stoneItems.length - 1];
+                    
+                    if (isFirst) {
+                        // If it's the first stone, align it to the left edge with some padding
+                        stoneSection.scrollTo({
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                        
+                        if (infoCard) {
+                            infoSection.scrollTo({
+                                left: 0,
+                                behavior: 'smooth'
                             });
-                        }, 500); // Slight delay for visual effect
+                        }
+                    } else if (isLast) {
+                        // If it's the last stone, align it to the right edge with some padding
+                        stoneSection.scrollTo({
+                            left: stoneSection.scrollWidth,
+                            behavior: 'smooth'
+                        });
+                        
+                        if (infoCard) {
+                            infoSection.scrollTo({
+                                left: infoSection.scrollWidth,
+                                behavior: 'smooth'
+                            });
+                        }
+                    } else {
+                        // For all other stones, center them
+                        stoneSection.scrollBy({
+                            left: stoneOffset,
+                            behavior: 'smooth'
+                        });
+                        
+                        if (infoCard) {
+                            const infoRect = infoCard.getBoundingClientRect();
+                            const infoCenter = infoRect.left + infoRect.width/2;
+                            const infoOffset = infoCenter - viewportCenter;
+                            
+                            infoSection.scrollBy({
+                                left: infoOffset,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
+            
+            // Function to enable dragging
+            function enableDragging(element) {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                
+                element.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    element.classList.add('active');
+                    startX = e.pageX - element.offsetLeft;
+                    scrollLeft = element.scrollLeft;
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    element.classList.remove('active');
+                });
+                
+                element.addEventListener('mouseup', () => {
+                    isDown = false;
+                    element.classList.remove('active');
+                });
+                
+                element.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - element.offsetLeft;
+                    const walk = (x - startX) * 2; // Scroll speed multiplier
+                    element.scrollLeft = scrollLeft - walk;
+                });
+                
+                // Touch events for mobile
+                element.addEventListener('touchstart', (e) => {
+                    isDown = true;
+                    element.classList.add('active');
+                    startX = e.touches[0].pageX - element.offsetLeft;
+                    scrollLeft = element.scrollLeft;
+                }, { passive: true });
+                
+                element.addEventListener('touchend', () => {
+                    isDown = false;
+                    element.classList.remove('active');
+                });
+                
+                element.addEventListener('touchmove', (e) => {
+                    if (!isDown) return;
+                    const x = e.touches[0].pageX - element.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    element.scrollLeft = scrollLeft - walk;
+                }, { passive: true });
+            }
         });
     </script>
 </body>

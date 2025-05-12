@@ -14,13 +14,24 @@ html {
 }
 
 body {
-    background-color: rgb(28, 28, 28);
+    background-color: #000000;
     color: rgb(195, 195, 195);
     font-family: 'bradford';
     font-size: 10pt;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+/* Hide scrollbars for all elements */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbars for WebKit browsers */
+*::-webkit-scrollbar {
+    display: none;
 }
 
 /* Landing section styling */
@@ -32,6 +43,7 @@ body {
     justify-content: center;
     padding-left: 4rem;
     position: relative;
+    background-color: #000000;
 }
 
 .opener p {
@@ -54,18 +66,6 @@ body {
     to { opacity: 0.8; }
 }
 
-.star {
-    display: inline-block;
-    animation: opener-star 3s ease infinite reverse;
-    font-size: 50px;
-    transition: 1s;
-}
-
-.star:hover {
-    filter: drop-shadow(0 0 0.3rem cyan);
-    color: cyan;
-}
-
 .glow-text {
     transition: 1s;
 }
@@ -75,23 +75,12 @@ body {
     color: cyan;
 }
 
-@keyframes opener-star {
-    0% {
-        transform: rotate(0deg) scale(1);
-    }
-    50% {
-        transform: rotate(360deg) scale(2.3);
-    }
-    100% {
-        transform: rotate(360deg) scale(1);
-    }
-}
-
 /* Parallax container styling */
 .parallax-container {
     position: relative;
     height: auto;
     width: 100%;
+    background-color: #000000;
 }
 
 /* Navigation styling */
@@ -100,7 +89,7 @@ body {
     top: 2rem;
     left: 2rem;
     z-index: 100;
-    background-color: rgba(28, 28, 28, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 1rem;
     border-radius: 4px;
 }
@@ -131,116 +120,180 @@ body {
     color: cyan;
 }
 
+/* Remove all target indicators */
+:target {
+    outline: none;
+}
+
+:target:before {
+    content: none;
+}
+
 /* Horizontal strips styling */
 .horizontal-strip {
-    height: 50vh;
+    height: 60vh;
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     position: relative;
-    padding: 2rem 0;
+    background-color: #000000;
+    cursor: grab;
+}
+
+.horizontal-strip.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
 }
 
 .strip-content {
     display: inline-flex;
-    padding: 0 20%;  /* Add padding to allow centering */
+    padding: 0 0 0 4rem; /* Start from left with minimal padding */
 }
 
 /* Stone items styling */
 .stones-strip {
-    background-color: rgba(20, 20, 20, 0.7);
+    background-color: #000000;
+    padding: 3rem 0; /* Added extra padding to prevent glow cutoff */
 }
 
 .stone-item {
     display: inline-block;
     text-align: center;
-    margin: 0 3rem;
+    margin: 0 1.5rem; /* Reduced spacing by 60% */
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.stone-item:hover {
-    transform: scale(1.1);
+    transform-origin: center center; /* Ensure transform happens from center */
 }
 
 .stone-img {
-    max-height: 40vh;
-    max-width: 250px;
+    height: 80vh; /* Base height, will be adjusted per stone */
+    max-width: 450px; /* Increased by 30% */
     object-fit: contain;
-    transition: 1s;
+    transition: transform 2s ease, filter 2s ease; /* Slowed down transitions */
+    transform-origin: center center;
 }
 
-.stone-img:hover {
-    filter: drop-shadow(0 0 1rem cyan);
+.stone-item:hover .stone-img {
+    filter: drop-shadow(0 0 1.5rem cyan); /* Increased glow for visibility */
+    transform: scale(1.15); /* Subtle scale on hover */
 }
 
-.stone-name {
-    font-size: 12px;
-    margin-top: 1rem;
-    white-space: nowrap;
-}
-
-/* Adjust various stone sizes to create progression */
+/* Adjust various stone sizes to create progression but make them 30% larger */
 [data-stone="pyrite"] .stone-img {
-    max-height: 15vh;
+    height: 32.5vh; /* 25vh + 30% */
 }
 
 [data-stone="silver-aura-quartz"] .stone-img {
-    max-height: 18vh;
+    height: 39vh; /* 30vh + 30% */
 }
 
 [data-stone="opalite-1"] .stone-img, 
 [data-stone="opalite-2"] .stone-img {
-    max-height: 20vh;
+    height: 45.5vh; /* 35vh + 30% */
 }
 
 [data-stone="kyanite"] .stone-img {
-    max-height: 22vh;
+    height: 52vh; /* 40vh + 30% */
 }
 
 [data-stone="pyrite-cube"] .stone-img {
-    max-height: 24vh;
+    height: 54.6vh; /* 42vh + 30% */
 }
 
 [data-stone="galena"] .stone-img {
-    max-height: 26vh;
+    height: 57.2vh; /* 44vh + 30% */
 }
 
 [data-stone="bornite"] .stone-img {
-    max-height: 28vh;
+    height: 59.8vh; /* 46vh + 30% */
 }
 
 [data-stone="shungite"] .stone-img {
-    max-height: 30vh;
+    height: 62.4vh; /* 48vh + 30% */
 }
 
 [data-stone="labradorite"] .stone-img {
-    max-height: 32vh;
+    height: 65vh; /* 50vh + 30% */
 }
 
 [data-stone="petrified-wood"] .stone-img {
-    max-height: 34vh;
+    height: 67.6vh; /* 52vh + 30% */
 }
 
 [data-stone="prasiolite"] .stone-img {
-    max-height: 36vh;
+    height: 70.2vh; /* 54vh + 30% */
 }
 
 [data-stone="amethyst"] .stone-img {
-    max-height: 38vh;
+    height: 72.8vh; /* 56vh + 30% */
 }
 
-/* Info cards styling */
+/* Info cards styling - left aligned now */
 .info-strip {
-    background-color: rgba(30, 30, 30, 0.9);
+    background-color: #000000;
 }
 
 .info-card {
     display: inline-block;
-    width: 250px;
+    width: 420px; /* 300px + 40% */
+    height: auto;
     vertical-align: top;
     padding: 1rem;
-    margin: 0 3rem;
-    border-radius: 4px;
-    background-color: rgba(
+    margin: 0 0.6rem; /* Reduced spacing */
+    white-space: normal;
+    text-align: left; /* Left aligned */
+}
+
+/* Replicating the original directory styling */
+.label {
+    border-bottom: 1px solid rgb(91, 91, 91);
+    padding: 0.5rem;
+    transition: all 1s ease;
+    margin: 0;
+    text-align: left; /* Left aligned */
+}
+
+.label-title {
+    font-weight: bold;
+}
+
+.label-info {
+    border-bottom: none;
+    text-align: justify;
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+/* Stories section styling */
+.stories-section {
+    padding: 4rem;
+    background-color: #000000;
+}
+
+.subtitle {
+    margin-bottom: 4rem;
+    font-family: jabin;
+    font-weight: 20;
+    font-size: 30px;
+}
+
+.story-container {
+    max-width: 800px;
+}
+
+.story {
+    margin-bottom: 2rem;
+    max-width: 100%;
+    color: rgb(121, 121, 121);
+    transition: 1s;
+}
+
+.story:hover {
+    color: rgb(195, 195, 195);
+}
+
+/* Colophon section styling */
+.colophon-container {
+    padding: 4rem;
+    background-color: #000000;
+}
