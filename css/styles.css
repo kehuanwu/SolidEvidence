@@ -1,3 +1,4 @@
+/* Add new styles for the footer section */
 @font-face {
     font-family: 'bradford';
     src: url('../font/BradfordMonoLL-Regular.otf');
@@ -49,8 +50,8 @@ body {
     pointer-events: auto; /* Ensure click events still work */
 }
 
-/* Landing section styling */
-.opener {
+/* Footer section styling (former opener) */
+.footer-section {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -58,7 +59,7 @@ body {
     background-color: #000000;
     scroll-snap-align: start;
     overflow: hidden;
-    z-index: 10; /* Ensure opener is above other sections */
+    z-index: 10;
 }
 
 .landing-content {
@@ -140,6 +141,7 @@ body {
     position: relative;
     width: 100%;
     background-color: #000000;
+    scroll-snap-align: start;
 }
 
 /* Navigation styling */
